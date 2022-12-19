@@ -1,0 +1,103 @@
+<mat-card class="create relative">
+  <form>
+    <div class="grid p-fluid formgrid">
+      <div class="col-12 mb-2 inline-block w-full">
+        <label class="descricao-input w-full">NOME</label>
+        <input
+          pInputText
+          type="text"
+          id="nome"
+          name="nome"
+          class="input-field border-solid w-full"
+          [(ngModel)]="funcionario.nome"
+          placeholder="Nome"
+          required
+        />
+      </div>
+      <div class="col-12 mb-2 inline-block w-full">
+        <label class="descricao-input block w-full">FAZENDA</label>
+        <p-dropdown
+          [options]="fazendas"
+          optionLabel="name"
+          optionValue="name"
+          placeholder="Escolha a sua fazenda"
+          class="w-full"
+        ></p-dropdown>
+      </div>
+      <div class="col-12 mb-2 inline-block w-full">
+        <label class="descricao-input w-full">CPF</label>
+        <p-inputMask
+          type="text"
+          id="cpf"
+          name="cpf"
+          [(ngModel)]="funcionario.cpf"
+          placeholder="CPF"
+          mask="999.999.999-99"
+          [required]="true"
+        >
+        </p-inputMask>
+      </div>
+      <div class="col-12 mb-2 inline-block w-full">
+        <label class="descricao-input w-full">TELEFONE</label>
+        <p-inputMask
+          type="text"
+          id="telefone"
+          name="telefone"
+          [(ngModel)]="funcionario.telefone"
+          placeholder="Telefone"
+          mask="(99) 99999-9999"
+          [required]="true"
+        >
+        </p-inputMask>
+      </div>
+      <div class="col-12 mb-2 inline-block w-full">
+        <label class="descricao-input w-full">FUNÇÃO PRINCIPAL</label>
+        <input
+          pInputText
+          type="text"
+          id="cargo"
+          name="funcao"
+          class="input-field border-solid w-full"
+          [(ngModel)]="funcionario.cargo"
+          placeholder="Função principal"
+          required
+        />
+      </div>
+      <div class="col-12 mb-2 inline-block w-full">
+        <label class="descricao-input">ATIVO</label>
+        <label class="switch relative inline-block">
+          <input
+            pInputText
+            type="checkbox"
+            id="ativo"
+            (change)="isActive($event)"
+            [attr.checked]="funcionario.ativo ? true : null"
+          />
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+  </form>
+</mat-card>
+<mat-card class="button-position relative">
+  <button
+    pButton
+    class="cursor-pointer"
+    type="button"
+    (click)="createFuncionario()"
+    id="cadastrar"
+    label="cadastrar"
+  >
+    CADASTRAR
+  </button>
+  <button
+    pButton
+    class="cursor-pointer"
+    type="button"
+    (click)="cancel()"
+    id="cancel"
+    label="cancel"
+  >
+    CANCELAR
+  </button>
+</mat-card>

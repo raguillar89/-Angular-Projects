@@ -1,0 +1,113 @@
+<mat-card class="create flex min-h-full min-w-full justify-content-center">
+  <mat-card class="sign-up relative flex flex-column border-solid">
+    <div class="logo-container w-full">
+      <a routerLink="/">
+        <img
+          class="logo absolute align-self-baseline"
+          src="/assets/img/logoDevInHouse.png"
+          alt="dev-agro"
+        />
+      </a>
+    </div>
+    <p class="title absolute text-center">Dev-Agro</p>
+    <p class="subtitle absolute text-center">Cadastro de Empresa</p>
+    <form class="absolute flex-column uppercase">
+      <label for="eName">NOME</label>
+      <input
+        type="text"
+        placeholder="Nome da Empresa"
+        pInputText
+        [(ngModel)]="empresa.nome"
+        name="nome"
+        id="nome"
+        required
+        class="border-solid inline-block w-full"
+      />
+      <label for="ecnpj">CNPJ</label>
+      <p-inputMask
+        type="text"
+        placeholder="CNPJ"
+        [(ngModel)]="empresa.cnpj"
+        name="cnpj"
+        id="cnpj"
+        mask="99.999.999/9999-99"
+        [required]="true"
+      ></p-inputMask>
+      <label for="endereco">ENDEREÇO DA SEDE</label>
+      <input
+        type="text"
+        placeholder="Endereço"
+        pInputText
+        [(ngModel)]="empresa.endereco"
+        name="endereco"
+        id="endereco"
+        required
+        class="border-solid inline-block w-full"
+      />
+      <label for="email">E-MAIL</label>
+      <input
+        type="email"
+        placeholder="E-mail"
+        pInputText
+        [(ngModel)]="empresa.email"
+        name="email"
+        id="email"
+        required
+        class="border-solid inline-block w-full"
+      />
+      <label for="password">SENHA</label>
+      <input
+        placeholder="Senha"
+        pInputText
+        [type]="passwordType"
+        [(ngModel)]="empresa.senha"
+        name="senha"
+        id="senha"
+        required
+        class="border-solid inline-block w-full"
+      />
+      <div class="icone relative cursor-pointer" (click)="togglePassword()">
+        <i
+          class="pi pi-eye"
+          *ngIf="passwordShow == true"
+          [ngStyle]="{ color: '#375F24' }"
+        ></i>
+        <i
+          class="pi pi-eye-slash"
+          *ngIf="passwordShow == false"
+          [ngStyle]="{ color: '#9FA2B4' }"
+        ></i>
+      </div>
+      <label for="retypepassword">DIGITE NOVAMENTE A SENHA</label>
+      <input
+        placeholder="Senha"
+        pInputText
+        [type]="passwordType2"
+        id="senha2"
+        required
+        class="border-solid inline-block w-full"
+      />
+      <div
+        class="icone2 relative cursor-pointer"
+        (click)="toggleRetypePassword()"
+      >
+        <i
+          class="pi pi-eye"
+          *ngIf="passwordShow2 == true"
+          [ngStyle]="{ color: '#375F24' }"
+        ></i>
+        <i
+          class="pi pi-eye-slash"
+          *ngIf="passwordShow2 == false"
+          [ngStyle]="{ color: '#9FA2B4' }"
+        ></i>
+      </div>
+      <input
+        type="submit"
+        value="Log In"
+        (click)="createEmpresa()"
+        class="login-button border-solid inline-block"
+      />
+    </form>
+  </mat-card>
+</mat-card>

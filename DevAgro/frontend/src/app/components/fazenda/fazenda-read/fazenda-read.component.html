@@ -1,0 +1,105 @@
+<mat-card class="read border-solid relative">
+  <header class="flex justify-content-between">
+    <section class="title">
+      <h3>Fazendas da Empresa</h3>
+    </section>
+    <section class="filters flex justify-content-between">
+      <div
+        class="order cursor-pointer flex justify-content-center align-items-center"
+      >
+        <i class="pi pi-sort"></i>
+        <span> Ordenar</span>
+      </div>
+      <div
+        class="filter cursor-pointer flex justify-content-center align-items-center"
+      >
+        <i class="pi pi-filter"></i>
+        <span>Filtro</span>
+      </div>
+    </section>
+  </header>
+  <main>
+    <div class="table-responsive overflow-hidden overflow-y-scroll">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Nome da Propriedade</th>
+            <th scope="col">Endereço</th>
+            <th scope="col">Grão</th>
+            <th scope="col">Previsão de Colheita</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- detalhes -->
+          <tr *ngFor="let fazenda of fazendas">
+            <td>
+              <div class="detalhes-linha flex align-items-center">
+                <span class="title-min">Nome da Propriedade - </span>
+                <div class="detalhes-content">
+                  <span class="detalhes-name">{{ fazenda.name }}</span>
+                </div>
+              </div>
+            </td>
+            <!-- alocado -->
+            <td>
+              <div class="detalhes-linha flex align-items-center">
+                <span class="title-min">Endereço - </span>
+                <div class="detalhes-content">
+                  <span class="detalhes-name">{{ fazenda.endereco }}</span>
+                </div>
+              </div>
+            </td>
+            <!-- cargo -->
+            <td>
+              <div class="detalhes-linha flex align-items-center">
+                <span class="title-min">Grão - </span>
+                <span class="detalhes-name">{{ fazenda.grao }}</span>
+              </div>
+            </td>
+            <!-- ativo -->
+            <td>
+              <div class="detalhes-linha flex align-items-center">
+                <span class="title-min">Previsão de Colheita - </span>
+                <span class="detalhes-name">{{
+                  fazenda.previsaoColheita
+                }}</span>
+              </div>
+            </td>
+
+            <td>
+              <div class="detalhes-linha flex align-items-center">
+                <div
+                  class="icone cursor-pointer"
+                  routerLink="/fazenda/update/{{ fazenda.id }}"
+                >
+                  <i class="pi pi-pencil"></i>
+                </div>
+                <div
+                  class="icone cursor-pointer"
+                  routerLink="/fazenda/delete/{{ fazenda.id }}"
+                >
+                  <i class="pi pi-trash"></i>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <p-button
+    class="button-add fixed flex border-solid cursor-pointer justify-content-center align-items-center"
+    routerLink="/fazenda/create"
+    >+</p-button
+  >
+
+  <footer>
+    <div
+      class="footer absolute flex justify-content-center align-items-center text-right"
+    >
+      <span>{{ fazendas.length }} fazendas </span>
+    </div>
+  </footer>
+</mat-card>

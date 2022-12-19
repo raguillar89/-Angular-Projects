@@ -1,0 +1,104 @@
+<mat-card class="create relative border-solid">
+  <form>
+    <div class="input-fields inline-block w-full">
+      <label class="descricao-input w-full">NOME</label>
+      <input
+        pInputText
+        type="text"
+        id="name"
+        name="nome"
+        class="input-field inline-block border-solid w-full"
+        [(ngModel)]="fazenda.name"
+        placeholder="Nome da Fazenda"
+        required
+      />
+    </div>
+    <div class="input-fields inline-block w-full">
+      <label class="descricao-input w-full">ENDEREÇO</label>
+      <input
+        pInputText
+        type="text"
+        id="endereco"
+        name="endereco"
+        class="input-field inline-block border-solid w-full"
+        [(ngModel)]="fazenda.endereco"
+        placeholder="Endereço da Fazenda"
+        required
+      />
+    </div>
+    <div class="input-fields inline-block w-full">
+      <label class="descricao-input w-full">CIDADE</label>
+      <input
+        pInputText
+        type="text"
+        id="cidade"
+        name="cidade"
+        class="input-field inline-block border-solid w-full"
+        [(ngModel)]="fazenda.cidade"
+        placeholder="Cidade da Fazenda"
+        required
+      />
+    </div>
+    <div class="input-fields inline-block w-full">
+      <label class="descricao-input w-full">GRÃO</label>
+      <input
+        pInputText
+        type="text"
+        id="grao"
+        name="grao"
+        class="input-field inline-block border-solid w-full"
+        [(ngModel)]="fazenda.grao"
+        placeholder="Grão"
+        required
+      />
+    </div>
+    <div class="input-fields inline-block w-full">
+      <label class="descricao-input w-full">DATA DA ÚLTIMA COLHEITA</label>
+      <p-inputMask
+        type="text"
+        id="ultimaColheita"
+        name="ultimaColheita"
+        [(ngModel)]="fazenda.ultimaColheita"
+        placeholder="dd/mm/aaaa"
+        mask="99/99/9999"
+        [required]="true"
+      >
+      </p-inputMask>
+    </div>
+    <div class="input-fields inline-block w-full">
+      <label class="descricao-input w-full">ESTOQUE</label>
+      <input
+        pInputText
+        type="text"
+        id="ultimaColheita"
+        name="ultimaColheita"
+        class="input-field inline-block border-solid w-full"
+        [(ngModel)]="fazenda.estoque"
+        placeholder="Quantidade em Estoque"
+        required
+      />
+    </div>
+  </form>
+</mat-card>
+<mat-card class="button-position relative">
+  <button
+    pButton
+    class="cursor-pointer"
+    type="button"
+    (click)="createFazenda()"
+    id="cadastrar"
+    label="cadastrar"
+  >
+    CADASTRAR
+  </button>
+  <button
+    pButton
+    class="cursor-pointer"
+    type="button"
+    (click)="cancel()"
+    id="cancel"
+    label="cancel"
+  >
+    CANCELAR
+  </button>
+</mat-card>

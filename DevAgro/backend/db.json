@@ -1,0 +1,387 @@
+{
+  "graos": [
+    {
+      "id": 3,
+      "nome": "Arroz",
+      "previsao_colheita": "29/11/2022",
+      "informacoes": "Tipo 1 ",
+      "fazenda": "Fazenda do Amaral",
+      "ativo": false
+    },
+    {
+      "nome": "Milho",
+      "previsao_colheita": "11/22/1212",
+      "informacoes": "Pipoca",
+      "fazenda": "Fazenda Feliz",
+      "ativo": true,
+      "id": 7
+    },
+    {
+      "nome": "Café",
+      "previsao_colheita": "02/09/2022",
+      "informacoes": "Safra",
+      "fazenda": "Fazenda Almeida",
+      "ativo": true,
+      "id": 8
+    },
+    {
+      "nome": "Soja",
+      "previsao_colheita": "21/07/2022",
+      "informacoes": "Próxima Colheita",
+      "fazenda": "Fazenda Almeida",
+      "ativo": false,
+      "id": 9
+    }
+  ],
+  "fazendas": [
+    {
+      "name": "Fazenda Feliz Sempre",
+      "grao": "Soja",
+      "ultimaColheita": "01/01/1000",
+      "previsaoColheita": "01/01/2002",
+      "endereco": "Rua Do Jabuti, 64",
+      "id": 4,
+      "estoque": 30,
+      "cidade": "Mossoró"
+    },
+    {
+      "name": "Fazenda Santa Helena",
+      "endereco": "Rua Brasil",
+      "grao": "Soja",
+      "ultimaColheita": "12/12/2021",
+      "previsaoColheita": "01/01/2002",
+      "id": 5,
+      "estoque": 60,
+      "cidade": "Urupemo"
+    },
+    {
+      "name": "Fazenda de Dentro",
+      "endereco": "Rua Uruguai",
+      "grao": "Café",
+      "ultimaColheita": "01/11/2021",
+      "previsaoColheita": "01/01/2002",
+      "id": 6,
+      "estoque": 10,
+      "cidade": "Chapecó"
+    },
+    {
+      "name": "Fazenda Almeida Café",
+      "endereco": "Rua da Cachoeira",
+      "grao": "Café",
+      "ultimaColheita": "01032022",
+      "cidade": "Londrina",
+      "estoque": "20",
+      "id": 9
+    },
+    {
+      "name": "Fazenda Do Arroizal",
+      "endereco": "Rua do Arroz",
+      "grao": "Arroz",
+      "ultimaColheita": "21/02/2022",
+      "cidade": "Campos Novos",
+      "estoque": "60",
+      "id": 10
+    },
+    {
+      "name": "Fazenda do Milho",
+      "endereco": "Rua do Milho, 999",
+      "grao": "Milho",
+      "ultimaColheita": "12/01/2012",
+      "cidade": "Blumenau",
+      "estoque": null,
+      "id": 11
+    },
+    {
+      "name": "Fazenda do Milho",
+      "endereco": "Rua do Milho, 999",
+      "grao": "Milho",
+      "ultimaColheita": "12/01/2012",
+      "cidade": "Blumenau",
+      "estoque": null,
+      "id": 12
+    },
+    {
+      "name": "Fazenda do Milho",
+      "endereco": "Rua do Milho, 999",
+      "grao": "Milho",
+      "ultimaColheita": "12/01/2012",
+      "cidade": "Blumenau",
+      "estoque": null,
+      "id": 13
+    },
+    {
+      "name": "Fazenda do Milho",
+      "endereco": "Rua do Milho, 999",
+      "grao": "Milho",
+      "ultimaColheita": "12/01/2012",
+      "cidade": "Blumenau",
+      "estoque": null,
+      "id": 14
+    },
+    {
+      "name": "Fazenda do Milho",
+      "endereco": "Rua do Milho, 999",
+      "grao": "Milho",
+      "ultimaColheita": "12/01/2012",
+      "cidade": "Blumenau",
+      "estoque": null,
+      "id": 15
+    },
+    {
+      "name": "Fazenda do Milho",
+      "endereco": "Rua do Milho, 999",
+      "grao": "Milho",
+      "ultimaColheita": "12/01/2012",
+      "cidade": "Blumenau",
+      "estoque": null,
+      "id": 16
+    },
+    {
+      "name": "Fazenda do Milho",
+      "endereco": "Rua do Milho, 999",
+      "grao": "Milho",
+      "ultimaColheita": "12/01/2012",
+      "cidade": "Blumenau",
+      "estoque": null,
+      "id": 17
+    },
+    {
+      "name": "Fazenda do Milho",
+      "endereco": "Rua do Milho, 999",
+      "grao": "Milho",
+      "ultimaColheita": "12/01/2012",
+      "cidade": "Blumenau",
+      "estoque": null,
+      "id": 18
+    },
+    {
+      "name": "Fazenda do Milho",
+      "endereco": "Rua do Milho, 999",
+      "grao": "Milho",
+      "ultimaColheita": "12/01/2012",
+      "cidade": "Blumenau",
+      "estoque": null,
+      "id": 19
+    },
+    {
+      "name": "Fazenda do Milho",
+      "endereco": "Rua do Milho, 999",
+      "grao": "Milho",
+      "ultimaColheita": "12/01/2012",
+      "cidade": "Blumenau",
+      "estoque": null,
+      "id": 20
+    },
+    {
+      "name": "Fazenda do Milho",
+      "endereco": "Rua do Milho, 999",
+      "grao": "Milho",
+      "ultimaColheita": "12/01/2012",
+      "cidade": "Blumenau",
+      "estoque": null,
+      "id": 21
+    },
+    {
+      "name": "Fazenda do Milho",
+      "endereco": "Rua do Milho, 999",
+      "grao": "Milho",
+      "ultimaColheita": "12/01/2012",
+      "cidade": "Blumenau",
+      "estoque": null,
+      "id": 22
+    },
+    {
+      "name": "Fazenda do Milho",
+      "endereco": "Rua do Milho, 999",
+      "grao": "Milho",
+      "ultimaColheita": "12/01/2012",
+      "cidade": "Blumenau",
+      "estoque": null,
+      "id": 23
+    },
+    {
+      "name": "Fazenda do Milho",
+      "endereco": "Rua do Milho, 999",
+      "grao": "Milho",
+      "ultimaColheita": "12/01/2012",
+      "cidade": "Blumenau",
+      "estoque": null,
+      "id": 24
+    },
+    {
+      "name": "Fazenda do Milho",
+      "endereco": "Rua do Milho, 999",
+      "grao": "Milho",
+      "ultimaColheita": "12/01/2012",
+      "cidade": "Blumenau",
+      "estoque": null,
+      "id": 25
+    },
+    {
+      "name": "Fazenda do Milho",
+      "endereco": "Rua do Milho, 999",
+      "grao": "Milho",
+      "ultimaColheita": "12/01/2012",
+      "cidade": "Blumenau",
+      "estoque": null,
+      "id": 26
+    },
+    {
+      "name": "Fazenda do Milho",
+      "endereco": "Rua do Milho, 999",
+      "grao": "Milho",
+      "ultimaColheita": "12/01/2012",
+      "cidade": "Blumenau",
+      "estoque": null,
+      "id": 27
+    },
+    {
+      "name": "Fazenda do Milho",
+      "endereco": "Rua do Milho, 999",
+      "grao": "Milho",
+      "ultimaColheita": "12/01/2012",
+      "cidade": "Blumenau",
+      "estoque": null,
+      "id": 28
+    },
+    {
+      "name": "Fazenda do Milho",
+      "endereco": "Rua do Milho, 999",
+      "grao": "Milho",
+      "ultimaColheita": "12/01/2012",
+      "cidade": "Blumenau",
+      "estoque": null,
+      "id": 29
+    },
+    {
+      "name": "Fazenda do Milho",
+      "endereco": "Rua do Milho, 999",
+      "grao": "Milho",
+      "ultimaColheita": "12/01/2012",
+      "cidade": "Blumenau",
+      "estoque": null,
+      "id": 30
+    },
+    {
+      "name": "Fazenda do Milho",
+      "endereco": "Rua do Milho, 999",
+      "grao": "Milho",
+      "ultimaColheita": "12/01/2012",
+      "cidade": "Blumenau",
+      "estoque": null,
+      "id": 31
+    }
+  ],
+  "funcionarios": [
+    {
+      "nome": "Kevin Richardson",
+      "fazenda": "Fazenda Santa Helena",
+      "data": "01/02/2020",
+      "update": "03/05/2022",
+      "cpf": "76544478998",
+      "telefone": "84921223490",
+      "cargo": "Estagiário (compositor)",
+      "ativo": false,
+      "id": 2
+    },
+    {
+      "nome": "Kelvin Bacon",
+      "fazenda": "Fazenda Santa Helena",
+      "data": "14/06/2022",
+      "update": "14/06/2022",
+      "cpf": "12345622222",
+      "telefone": "48987661223",
+      "cargo": "Encarregado",
+      "ativo": true,
+      "id": 3
+    },
+    {
+      "nome": "Rafael Souza",
+      "fazenda": "Fazenda Quinta da Boa Vista",
+      "data": "18/06/2022",
+      "update": "18/06/2022",
+      "cpf": "34554311199",
+      "telefone": "21976453322",
+      "cargo": "Caseiro",
+      "ativo": true,
+      "id": 5
+    },
+    {
+      "nome": "Maria Rita Almeida Dos Santos",
+      "fazenda": "Fazenda de Dentro",
+      "data": "18/06/2022",
+      "update": "18/06/2022",
+      "cpf": "34509867888",
+      "telefone": "48922336677",
+      "cargo": "Gerente de produção",
+      "ativo": true,
+      "id": 6
+    }
+  ],
+  "empresas": [
+    {
+      "id": 1,
+      "nome": "Cardoso Administração Fazendária Ltda",
+      "cnpj": "12345678901234",
+      "email": "blablabla@email.com",
+      "endereco": "Rua do Senai, 24",
+      "senha": "123456"
+    },
+    {
+      "nome": "Amorim Administração de Fazenda Ltda",
+      "email": "amorim@amorim.com.br",
+      "cnpj": "23321987000110",
+      "endereco": "Rua Joaquim Coelho de Arruda",
+      "senha": "123456",
+      "id": 2
+    },
+    {
+      "nome": "Joel Administração de Fazendas Ltda",
+      "email": "joel@joel.com.br",
+      "cnpj": "22456765000110",
+      "endereco": "Rua Da Chuva",
+      "senha": "12345",
+      "id": 3
+    },
+    {
+      "nome": "Barbosa Administração Fazendária",
+      "email": "barbosa@barbosaa.com.br",
+      "cnpj": "14321981000111",
+      "endereco": "Rua Alemanha",
+      "senha": "123456",
+      "id": 4
+    },
+    {
+      "nome": "Farm Administração de Fazendas e Chácaras",
+      "email": "farm@farm.com.br",
+      "cnpj": "34543111000230",
+      "endereco": "Estrada Geral dos Búzios",
+      "senha": "123456",
+      "id": 5
+    },
+    {
+      "nome": "Barros Administração de Fazendas Ltda",
+      "email": "barros@barros.com.br",
+      "cnpj": "90765456000111",
+      "endereco": "Rua Uruguai",
+      "senha": "123456",
+      "id": 6
+    },
+    {
+      "nome": "Joealma Administração de Fazendas Ltda",
+      "email": "barbosa@12345",
+      "cnpj": "66555222333399",
+      "endereco": "Rua da Base",
+      "senha": "123456",
+      "id": 7
+    },
+    {
+      "nome": "Gonçalves Administração Fazendária Ltda",
+      "email": "goncalves@go.com.br",
+      "cnpj": "45667234000110",
+      "endereco": "Rua Das Canoas",
+      "senha": "123456",
+      "id": 8
+    }
+  ]
+}

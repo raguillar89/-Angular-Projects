@@ -1,0 +1,67 @@
+<div
+  class="container min-w-screen min-h-screen flex justify-content-center align-items-center"
+>
+  <div class="formulario">
+    <div class="area-logo flex justify-content-center align-items-center">
+      <img
+        routerLink="/login"
+        class="logo"
+        src="/assets/img/logoDevInHouse.png"
+        alt="logo"
+      />
+    </div>
+    <div class="area-titulo flex flex-column align-items-center">
+      <span class="titulo">Dev-Agro</span>
+      <span class="subtitulo">Entre com seu login e senha</span>
+    </div>
+    <form>
+      <label class="label">EMAIL</label>
+      <input
+        class="border-solid"
+        type="email"
+        placeholder="E-mail"
+        pInputText
+        name="email"
+        id="email"
+        required
+      />
+      <label class="label">SENHA</label>
+      <a href="#" class="forget-password">Esqueceu a senha?</a>
+      <input
+        class="border-solid"
+        placeholder="Senha"
+        pInputText
+        [type]="passwordType"
+        id="senha"
+        required
+      />
+      <button
+        pButton
+        type="button"
+        (click)="login()"
+        label="Log in"
+        id="btn-login"
+      >
+        Log in
+      </button>
+      <div class="icone relative cursor-pointer" (click)="togglePassword()">
+        <i
+          class="pi pi-eye"
+          *ngIf="passwordShow == true"
+          [ngStyle]="{ color: '#375F24' }"
+        ></i>
+        <i
+          class="pi pi-eye-slash"
+          *ngIf="passwordShow == false"
+          [ngStyle]="{ color: '#9FA2B4' }"
+        ></i>
+      </div>
+    </form>
+    <div
+      class="area-signin flex align-items-center justify-content-center flex-column"
+    >
+      <span>Sua empresa não possui conta?</span>
+      <a routerLink="/singup">Crie agora!</a>
+    </div>
+  </div>
+</div>

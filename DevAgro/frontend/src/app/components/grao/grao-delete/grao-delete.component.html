@@ -1,0 +1,94 @@
+<div class="content">
+  <mat-card class="delete border-solid relative">
+    <form>
+      <div class="grid p-fluid formgrid">
+        <div class="col-12 mb-2 inline-block w-full">
+          <label class="descricao-input w-full">NOME</label>
+          <input
+            pInputText
+            type="text"
+            id="nome"
+            name="nome"
+            class="input-field border-solid w-full"
+            placeholder="Nome do Geão"
+            [(ngModel)]="grao.nome"
+            disabled=""
+          />
+        </div>
+        <div class="col-12 mb-2 inline-block w-full">
+          <label class="descricao-input w-full">FAZENDA QUE PRODUZ</label>
+          <select
+            class="input-field border-solid w-full"
+            id="fazenda"
+            placeholder="Endereço da Fazenda"
+            disabled=""
+          >
+            <option>{{ grao.fazenda }}</option>
+          </select>
+        </div>
+        <div class="col-12 mb-2 inline-block w-full">
+          <label class="descricao-input w-full">PREVISÃO DE COLHEITA</label>
+          <p-inputMask
+            type="text"
+            id="previsaoColheita"
+            name="grao"
+            [(ngModel)]="grao.previsao_colheita"
+            placeholder="dd/mm/aaaa"
+            mask="99/99/9999"
+            [disabled]="true"
+          >
+          </p-inputMask>
+        </div>
+        <div class="col-12 mb-2 inline-block w-full">
+          <label class="descricao-input w-full">INFORMAÇÕES ADICIONAIS</label>
+          <input
+            pInputText
+            type="text"
+            id="informacoes"
+            name="ultimaColheita"
+            class="input-field border-solid w-full"
+            placeholder="informações"
+            [(ngModel)]="grao.informacoes"
+            disabled=""
+          />
+        </div>
+        <div class="col-12 mb-2 inline-block w-full">
+          <label class="descricao-input">COLHIDO</label>
+          <label class="switch relative inline-block">
+            <input
+              pInputText
+              type="checkbox"
+              id="ativo"
+              (change)="isActive($event)"
+              [attr.checked]="grao.ativo ? true : null"
+              disabled=""
+            />
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+    </form>
+  </mat-card>
+  <mat-card class="button-position relative">
+    <button
+      pButton
+      class="cursor-pointer"
+      type="button"
+      (click)="deletarGrao()"
+      id="delete"
+      label="delete"
+    >
+      DELETAR
+    </button>
+    <button
+      pButton
+      class="cursor-pointer"
+      type="button"
+      (click)="cancel()"
+      id="cancel"
+      label="cancel"
+    >
+      CANCELAR
+    </button>
+  </mat-card>
+</div>

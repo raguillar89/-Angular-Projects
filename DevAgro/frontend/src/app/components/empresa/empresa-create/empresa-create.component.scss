@@ -1,0 +1,135 @@
+.create {
+  background: #375f24;
+  border-radius: 0;
+}
+
+.sign-up {
+  width: 790px;
+  height: 842px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px #dfe0eb;
+  border-radius: 8px;
+}
+
+.logo-container {
+  height: 69px;
+}
+
+.logo {
+  width: 253px;
+  height: 69px;
+  margin-left: 35%;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.title {
+  height: 30px;
+  left: 237px;
+  right: 237px;
+  top: 118px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.3px;
+  color: #375f24;
+}
+
+.subtitle {
+  height: 30px;
+  left: 36px;
+  right: 28px;
+  top: 148px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.3px;
+  color: #375f24;
+}
+
+form {
+  width: 97%;
+  margin-top: 30%;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.3px;
+  color: #375f24;
+}
+
+input {
+  padding: 12px 20px;
+  margin: 8px 0 8px 0;
+  box-sizing: border-box;
+  background: #fcfdfe;
+  border: 1px #375f24;
+  border-radius: 8px;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+  background-color: #375f24;
+  font-weight: 600;
+  color: #ffffff;
+  box-shadow: 0px 4px 12px rgba(55, 81, 255, 0.24);
+}
+
+input[type="submit"]:hover {
+  background-color: #ffffff;
+  font-weight: 600;
+  color: #375f24;
+  transition: 0.3s;
+  box-shadow: 0px 4px 12px rgba(55, 81, 255, 0.24);
+}
+
+.icone {
+  margin: 0;
+  padding: 0;
+  height: 20px;
+  width: 20px;
+  bottom: 39px;
+  left: 725px;
+}
+
+.icone2 {
+  margin: 0;
+  padding: 0;
+  height: 20px;
+  width: 20px;
+  bottom: 38px;
+  left: 725px;
+}
+
+.fa {
+  font-size: 20px;
+}
+
+.obrigatory {
+  border: 1px solid #a31d1d;
+  display: inline-block;
+  animation: shakeX;
+  animation-duration: 1s;
+  margin: 8px 0px 8px 0px;
+  width: 100%;
+  border-radius: 8px;
+  background: #fcfdfe;
+}
+
+:host {
+  ::ng-deep .p-inputmask {
+    width: 100%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background: #fcfdfe;
+    border: 1px solid #375f24;
+    border-radius: 8px;
+  }
+}

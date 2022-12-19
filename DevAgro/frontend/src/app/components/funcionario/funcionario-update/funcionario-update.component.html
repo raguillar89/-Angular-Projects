@@ -1,0 +1,73 @@
+<mat-card class="update relative border-solid">
+  <form>
+    <div class="grid p-fluid formgrid">
+      <div class="col-12 mb-2 inline-block w-full">
+        <label class="descricao-input">NOME</label>
+        <input
+          pInputText
+          type="text"
+          name="nome"
+          id="nome"
+          class="input-field border-solid w-full"
+          [(ngModel)]="funcionario.nome"
+        />
+      </div>
+      <div class="col-12 mb-2 inline-block w-full">
+        <label class="descricao-input w-full" id="fazenda">FAZENDA</label>
+        <p-dropdown
+          [options]="fazendas"
+          optionLabel="name"
+          optionValue="name"
+          placeholder="Escolha a sua fazenda"
+          class="w-full"
+        ></p-dropdown>
+      </div>
+      <div class="col-12 mb-2 inline-block w-full">
+        <label class="descricao-input">FUNÇÃO PRINCIPAL</label>
+        <input
+          pInputText
+          type="text"
+          name="funcao"
+          class="input-field border-solid w-full"
+          id="cargo"
+          [(ngModel)]="funcionario.cargo"
+        />
+      </div>
+      <div class="col-12 mb-2 inline-block w-full">
+        <label class="descricao-input">ATIVO</label>
+        <label class="switch relative inline-block">
+          <input
+            pInputText
+            type="checkbox"
+            id="ativo"
+            (change)="isActive($event)"
+            [attr.checked]="funcionario.ativo ? true : null"
+          />
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+  </form>
+</mat-card>
+<mat-card class="button-position relative">
+  <button
+    pButton
+    class="cursor-pointer"
+    type="button"
+    (click)="updateFuncionario()"
+    id="update"
+    label="update"
+  >
+    ALTERAR
+  </button>
+  <button
+    pButton
+    class="cursor-pointer"
+    type="button"
+    (click)="cancel()"
+    id="cancel"
+    label="cancel"
+  >
+    CANCELAR
+  </button>
+</mat-card>

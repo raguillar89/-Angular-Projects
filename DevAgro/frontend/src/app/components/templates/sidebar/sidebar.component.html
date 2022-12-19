@@ -1,0 +1,43 @@
+<mat-sidenav-container class="sidebar">
+  <mat-sidenav
+    [disableClose]="true"
+    class="sidenav {{ responsive ? 'active' : '' }} h-full"
+    mode="side"
+    farm-title-
+    opened
+    fixedInViewport="true"
+  >
+    <a mat-list-item (click)="callSideNav()" class="top-icon w-full relative">
+      <i class="material-icons">list</i>
+    </a>
+    <mat-nav-list class="nav-list">
+      <a mat-list-item routerLink="/home" routerLinkActive="selected">
+        <div class="selected-indicator"></div>
+        <i class="pi pi-home"></i>
+        Início </a
+      ><br />
+      <a mat-list-item routerLink="/funcionario/" routerLinkActive="selected">
+        <div class="selected-indicator"></div>
+        <i class="pi pi-users"></i>
+        Funcionario </a
+      ><br />
+      <a mat-list-item routerLink="/fazenda/" routerLinkActive="selected">
+        <div class="selected-indicator"></div>
+        <i class="pi pi-sitemap"></i>
+        Fazenda </a
+      ><br />
+      <a mat-list-item routerLink="/grao/" routerLinkActive="selected">
+        <div class="selected-indicator"></div>
+        <i class="pi pi-th-large"></i>
+        Grão </a
+      ><br />
+      <a mat-list-item (click)="logout()" class="bottom-icon">
+        <i class="pi pi-sign-out"></i>
+        Log out</a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="content h-full">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
