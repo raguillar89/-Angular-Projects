@@ -17,6 +17,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/templates/header/header.component';
 import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
 import { LoginComponent } from './views/login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -55,7 +57,12 @@ import { LoginComponent } from './views/login/login.component';
     MatInputModule,
     MatIconModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    ToastrModule.forRoot({
+      timeOut: 4000,
+      closeButton: true,
+      progressBar: true
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
