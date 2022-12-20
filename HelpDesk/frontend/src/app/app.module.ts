@@ -23,13 +23,15 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './components/templates/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/templates/header/header.component';
+import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    TecnicoListComponent
   ],
   imports: [
     BrowserModule,
