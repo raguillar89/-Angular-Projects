@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { API_CONFIG } from '../config/api.config';
 import { Credenciais } from '../models/credenciais';
 
 @Injectable({
@@ -11,10 +10,12 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
+  baseUrl = 'http://localhost:3001/cadastro/'
+
   jwtService: JwtHelperService = new JwtHelperService();
 
   authenticate(creds: Credenciais){
-      return this.http.post(`${API_CONFIG.baseUrl}/login`, creds, {
+      return this.http.post(`${this.baseUrl}/cadastro`, creds, {
         observe: 'response',
         responseType: 'text'
       });

@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
+import { Cadastro } from 'src/app/models/cadastro';
 import { Credenciais } from 'src/app/models/credenciais';
 import { AuthService } from 'src/app/services/auth.service';
+import { SignupService } from 'src/app/services/signup.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent {
   
-  constructor(private toast: ToastrService, private auth: AuthService, private router: Router) { }
+  constructor(private auth: AuthService, private router: Router, private signupService: SignupService) { }
 
   ngOnInit(): void { }
 
@@ -21,20 +22,29 @@ export class LoginComponent {
     senha: ''
   }
 
+  cad: Cadastro;
+
   email = new FormControl(null, Validators.email);
   senha = new FormControl(null, Validators.minLength(5));
 
   logar() {
-    this.auth.authenticate(this.creds).subscribe(resposta => {
-      if(this.creds.email === this.email.value.trim()){
-        if(this.creds.senha === this.senha.value.trim()){
-          this.auth.successfulLogin(resposta.headers.get('Authorization').substring(7));
-          this.router.navigate(['']);
+    let email = document.getElementById('email') as HTMLInputElement;
+    let password = document.getElementById('senha') as HTMLInputElement;
+    this.signupService.read().subscribe((cads) => {
+      if (cads.find((e) => e.email == email.value.trim())) {
+        this.cad = cads.find((e) => e.email === email.value.trim());
+        if (this.cad.senha === password.value.trim()) {
+          this.router.navigate(['/home']);
+          localStorage.setItem('status', 'logged');
+          localStorage.setItem('nome', this.cad.nome);
+          location.reload();
+        } else {
+          this.signupService.showMessage('ERROR: Senha incorreta!', true);
         }
+      } else {
+        this.signupService.showMessage('ERROR: Email não cadastrado!', true);
       }
-    }, () => {
-      this.toast.error('Usuário e/ou Senha Inválida.');
-    })
+    });
   }
 
   validaCampos(): boolean{

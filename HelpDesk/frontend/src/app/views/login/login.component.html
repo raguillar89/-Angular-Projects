@@ -9,6 +9,7 @@
             [formControl]="email"
             [(ngModel)]="creds.email" 
             name="email" 
+            id="email"
             matInput placeholder="Ex. ...@email.com">
         </mat-form-field>
       
@@ -20,6 +21,7 @@
             type="password" 
             [(ngModel)]="creds.senha" 
             name="senha" 
+            id="senha"
             matInput placeholder="Ex. 123">
         </mat-form-field>
 
@@ -28,5 +30,10 @@
         [disabled]="!validaCampos()"
         class="full-width mat-elevation-z4" 
         mat-stroked-button color="primary">Login</button>
+
+        <div class="area-signin">
+            <span>Não possui Cadastro?</span>
+            <a routerLink="/signup">Crie agora!</a>
+        </div>
     </form>    
 </div>

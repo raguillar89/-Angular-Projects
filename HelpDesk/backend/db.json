@@ -4,5 +4,10 @@
             "email": "blablabla@email.com",
             "senha": "12345"
         }
+    ],
+    "cadastros": [
+        {
+            
+        }
     ]
 }

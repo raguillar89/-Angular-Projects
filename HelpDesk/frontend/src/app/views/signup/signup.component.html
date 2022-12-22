@@ -1,0 +1,70 @@
+<div class="container">
+    <form class="form mat-elevation-z8">
+        <h1>Cadastro</h1>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Nome Completo</mat-label>
+            <input 
+            required
+            [formControl]="nome"
+            type="text"
+            [(ngModel)]="cad.nome" 
+            name="nome"
+            id="nome"
+            matInput placeholder="Ex. João Ricardo">
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Telefone</mat-label>
+            <input 
+            required
+            [formControl]="telefone"
+            type="text"
+            [(ngModel)]="cad.telefone" 
+            name="telefone"
+            id="telefone"
+            matInput placeholder="Ex. 11123456789">
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>E-mail</mat-label>
+            <input 
+            required
+            [formControl]="email"
+            type="email"
+            [(ngModel)]="cad.email" 
+            name="email"
+            id="email"
+            matInput placeholder="Ex. ...@email.com">
+        </mat-form-field>
+      
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Senha</mat-label>
+            <input 
+            required
+            [formControl]="senha"
+            [type]="passwordType" 
+            [(ngModel)]="cad.senha" 
+            name="senha" 
+            id="senha"
+            matInput placeholder="Ex. 123">
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Senha</mat-label>
+            <input 
+            required
+            [formControl]="senha"
+            [type]="passwordType2" 
+            name="senha2"
+            id="senha2"
+            matInput placeholder="Ex. 123">
+        </mat-form-field>
+
+        <button 
+        (click)="createCadastro()"
+        [disabled]="!validaCampos()"
+        class="full-width mat-elevation-z4" 
+        mat-stroked-button color="primary">Cadastrar</button>
+    </form>    
+</div>
