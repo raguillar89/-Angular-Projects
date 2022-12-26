@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Cadastro } from 'src/app/models/cadastro';
-import { Credenciais } from 'src/app/models/credenciais';
 import { AuthService } from 'src/app/services/auth.service';
 import { SignupService } from 'src/app/services/signup.service';
 
@@ -13,16 +12,18 @@ import { SignupService } from 'src/app/services/signup.service';
 })
 export class LoginComponent {
   
-  constructor(private auth: AuthService, private router: Router, private signupService: SignupService) { }
+  constructor(private router: Router, private signupService: SignupService) { }
 
   ngOnInit(): void { }
 
-  creds: Credenciais = {
+  cads: Cadastro[];
+
+  cad: Cadastro = {
+    nome: '',
+    telefone: '',
     email: '',
     senha: ''
   }
-
-  cad: Cadastro;
 
   email = new FormControl(null, Validators.email);
   senha = new FormControl(null, Validators.minLength(5));
@@ -34,7 +35,7 @@ export class LoginComponent {
       if (cads.find((e) => e.email == email.value.trim())) {
         this.cad = cads.find((e) => e.email === email.value.trim());
         if (this.cad.senha === password.value.trim()) {
-          this.router.navigate(['/home']);
+          this.router.navigate(['/*']);
           localStorage.setItem('status', 'logged');
           localStorage.setItem('nome', this.cad.nome);
           location.reload();

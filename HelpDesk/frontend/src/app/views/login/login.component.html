@@ -6,8 +6,7 @@
             <mat-label>E-mail</mat-label>
             <input 
             required
-            [formControl]="email"
-            [(ngModel)]="creds.email" 
+            [(ngModel)]="cad.email" 
             name="email" 
             id="email"
             matInput placeholder="Ex. ...@email.com">
@@ -17,9 +16,8 @@
             <mat-label>Senha</mat-label>
             <input 
             required
-            [formControl]="senha"
             type="password" 
-            [(ngModel)]="creds.senha" 
+            [(ngModel)]="cad.senha" 
             name="senha" 
             id="senha"
             matInput placeholder="Ex. 123">

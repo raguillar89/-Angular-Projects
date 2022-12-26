@@ -1,13 +1,18 @@
 {
-    "credenciais": [
-        {
-            "email": "blablabla@email.com",
-            "senha": "12345"
-        }
-    ],
-    "cadastros": [
-        {
-            
-        }
-    ]
+  "cadastros": [
+    {
+      "id": 1,
+      "nome": "Renan Pinho",
+      "telefone": "11123456789",
+      "email": "renan@email.com.br",
+      "senha": "123456"
+    },
+    {
+      "nome": "Renan Pinho",
+      "telefone": "11123456789",
+      "email": "renan@email.com.br",
+      "senha": "123456",
+      "id": 2
+    }
+  ]
 }

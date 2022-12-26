@@ -21,9 +21,9 @@ const routes: Routes = [
     path: 'signup', component: SignupComponent 
   },
   {
-    path: '', component: NavComponent, canActivate: [AuthGuard], children: [
-      { path: 'home', component: HomeComponent },
-      { path: 'tecnicos', component: TecnicoListComponent },
+    path: '*', component: NavComponent, canActivate: [AuthGuard], children: [
+      { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+      { path: 'tecnicos', component: TecnicoListComponent, canActivate: [AuthGuard] },
     ]
   },  
 ];

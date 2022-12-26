@@ -42,6 +42,8 @@ export class SignupComponent {
     let senha = document.getElementById('senha2') as HTMLInputElement;
     let email = document.getElementById('email') as HTMLInputElement;
 
+    console.log(this.cad);
+
     if (!this.inputValidator()) {
       this.signupService.showMessage('Preencha todos os campos!', true);
       throw new Error('Preencha todos os campos!');
@@ -63,7 +65,7 @@ export class SignupComponent {
     } else {
       this.signupService.create(this.cad).subscribe(() => {
         this.signupService.showMessage('Cadastro realizado com sucesso!');
-        this.router.navigate(['']);
+        this.router.navigate(['/']);
       });
     }
   }
