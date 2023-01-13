@@ -38,7 +38,6 @@ export class LoginComponent {
           this.router.navigate(['/*']);
           localStorage.setItem('status', 'logged');
           localStorage.setItem('nome', this.cad.nome);
-          location.reload();
         } else {
           this.signupService.showMessage('ERROR: Senha incorreta!', true);
         }
