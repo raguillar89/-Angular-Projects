@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Cadastro } from 'src/app/models/cadastro';
-import { AuthService } from 'src/app/services/auth.service';
 import { SignupService } from 'src/app/services/signup.service';
 
 @Component({

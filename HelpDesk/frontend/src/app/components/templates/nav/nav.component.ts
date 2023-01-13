@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { SignupService } from 'src/app/services/signup.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,10 +8,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent {
-
-  constructor(private router: Router){ }
+  constructor(private router: Router, private signupService: SignupService){ }
 
   ngOnInit(): void {
     this.router.navigate(['*'])
+  }
+
+  logout() {    
+    localStorage.removeItem('status');
+    localStorage.removeItem('login');
+    localStorage.removeItem('nome');
+    this.signupService.showMessage('Logout realizado com sucesso!', false);
+    this.router.navigate(['login']);
   }
 }

@@ -3,13 +3,12 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable, map, catchError, EMPTY } from 'rxjs';
 import { Cadastro } from '../models/cadastro';
+import { API_CONFIG } from '../components/config/api.config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SignupService {
-
-  baseUrl = 'http://localhost:3001/cadastros/';
 
   cads: Cadastro[];
 
@@ -23,18 +22,18 @@ export class SignupService {
   constructor(private http: HttpClient, private snackBar: MatSnackBar) {}
 
   create(cad: Cadastro): Observable<Cadastro> {
-    return this.http.post<Cadastro>(this.baseUrl, cad);
+    return this.http.post<Cadastro>(`${API_CONFIG.baseUrl}/cadastros`, cad);
   }
 
   read(): Observable<Cadastro[]> {
-    return this.http.get<Cadastro[]>(this.baseUrl).pipe(
+    return this.http.get<Cadastro[]>(`${API_CONFIG.baseUrl}/cadastros`).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
 
   readById(id: number): Observable<Cadastro> {
-    const url = `${this.baseUrl}/${id}`;
+    const url = `${API_CONFIG.baseUrl}/${id}`;
     return this.http.get<Cadastro>(url).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
