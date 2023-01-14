@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Cadastro } from 'src/app/models/cadastro';
@@ -9,7 +9,7 @@ import { SignupService } from 'src/app/services/signup.service';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss']
 })
-export class SignupComponent {
+export class SignupComponent implements OnInit {
 
   constructor(private router: Router, private signupService: SignupService) { }
 

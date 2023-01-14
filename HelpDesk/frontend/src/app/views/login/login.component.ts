@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Cadastro } from 'src/app/models/cadastro';
@@ -9,13 +9,13 @@ import { SignupService } from 'src/app/services/signup.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   
   constructor(private router: Router, private signupService: SignupService) { }
 
   ngOnInit(): void { }
 
-  cads: Cadastro[];
+  cads: Cadastro;
 
   cad: Cadastro = {
     nome: '',
@@ -41,7 +41,7 @@ export class LoginComponent {
           this.signupService.showMessage('ERROR: Senha incorreta!', true);
         }
       } else {
-        this.signupService.showMessage('ERROR: Email não cadastrado!', true);
+        this.signupService.showMessage('ERROR: E-mail não cadastrado!', true);
       }
     });
   }

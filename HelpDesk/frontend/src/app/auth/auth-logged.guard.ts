@@ -8,10 +8,7 @@ export class AuthLoggedGuard implements CanActivate {
 
   constructor(private router: Router) {}
 
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): boolean {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     if (localStorage.getItem('status') != null) {
       localStorage.removeItem('status');
     }
