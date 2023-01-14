@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
 
 import { HomeComponent } from './components/home/home.component';
+import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
 import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
 import { NavComponent } from './components/templates/nav/nav.component';
 import { LoginComponent } from './views/login/login.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
     path: '*', component: NavComponent, canActivate: [AuthGuard], children: [
       { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
       { path: 'tecnicos', component: TecnicoListComponent, canActivate: [AuthGuard] },
+      { path: 'tecnicos/create', component: TecnicoCreateComponent, canActivate: [AuthGuard] },
     ]
   },  
 ];

@@ -26,6 +26,7 @@ import { HeaderComponent } from './components/templates/header/header.component'
 import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
 import { LoginComponent } from './views/login/login.component';
 import { SignupComponent } from './views/signup/signup.component';
+import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { SignupComponent } from './views/signup/signup.component';
     HeaderComponent,
     TecnicoListComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    TecnicoCreateComponent
   ],
   imports: [
     BrowserModule,

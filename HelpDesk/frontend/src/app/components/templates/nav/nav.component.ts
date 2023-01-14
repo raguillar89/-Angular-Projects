@@ -18,7 +18,7 @@ export class NavComponent {
     localStorage.removeItem('status');
     localStorage.removeItem('login');
     localStorage.removeItem('nome');
-    this.signupService.showMessage('Logout realizado com sucesso!', false);
+    this.signupService.showMessage('Logout realizado com sucesso!', true);
     this.router.navigate(['login']);
   }
 }

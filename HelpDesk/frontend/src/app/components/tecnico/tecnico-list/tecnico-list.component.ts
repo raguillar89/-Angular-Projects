@@ -20,9 +20,7 @@ export class TecnicoListComponent implements OnInit{
 
   constructor(private tecnicoService: TecnicoService) { }
 
-  ngOnInit(): void {
-    this.findAll();
-  }
+  ngOnInit(): void { }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
