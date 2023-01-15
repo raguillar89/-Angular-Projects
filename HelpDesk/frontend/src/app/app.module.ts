@@ -28,7 +28,6 @@ import { LoginComponent } from './views/login/login.component';
 import { SignupComponent } from './views/signup/signup.component';
 import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

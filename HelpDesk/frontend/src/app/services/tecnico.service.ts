@@ -1,28 +1,49 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { EMPTY, Observable } from 'rxjs';
 import { API_CONFIG } from '../components/config/api.config';
-import { Tecnicos } from '../models/tecnicos';
+import { Tecnico } from '../models/tecnicos';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TecnicoService {
 
-  tecnicos: Tecnicos[];
+  tecnicos: Tecnico[];
 
-  tecnico: Tecnicos = {
+  tecnico: Tecnico = {
       nome: '',
       cpf: '',
       email: '',
       senha: '',
-      perfis: [''],
+      perfis: [],
       dataCriacao: ''
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private snackBar: MatSnackBar) { }
 
-  findAll(): Observable<Tecnicos[]> {
-    return this.http.get<Tecnicos[]>(`${API_CONFIG.baseUrl}/tecnicos`);
+  showMessage(msg: string, isError: boolean = false): void {
+    this.snackBar.open(msg, 'X', {
+      duration: 2000,
+      horizontalPosition: 'right',
+      verticalPosition: 'top',
+      panelClass: isError ? ['msg-error'] : ['msg-success'],
+    });
   }
+
+  errorHandler(e: any): Observable<any> {
+    this.showMessage('Ocorreu um erro!', true);
+    return EMPTY;
+  }
+
+  findAll(): Observable<Tecnico[]> {
+    return this.http.get<Tecnico[]>(`${API_CONFIG.baseUrl}/tecnicos`);
+  }
+
+  create(tecnico: Tecnico): Observable<Tecnico> {
+    return this.http.post<Tecnico>(`${API_CONFIG.baseUrl}/tecnicos`, tecnico);
+  }
+
+
 }
