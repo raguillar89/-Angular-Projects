@@ -7,6 +7,12 @@ table {
     width: 90%;
 }
 
+h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
 mat-form-field {
     width: 100%;
 }
@@ -16,8 +22,10 @@ button {
     margin-bottom: 1rem;
 }
 
-h1 {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 2rem;
+.edit {
+    color: rgb(0, 180, 224);
+}
+
+.delete {
+    color: rgb(226, 137, 20);
 }
