@@ -27,6 +27,8 @@ import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-
 import { LoginComponent } from './views/login/login.component';
 import { SignupComponent } from './views/signup/signup.component';
 import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
+import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecn
     TecnicoListComponent,
     LoginComponent,
     SignupComponent,
-    TecnicoCreateComponent
+    TecnicoCreateComponent,
+    TecnicoUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +64,7 @@ import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecn
     MatListModule,
     MatCardModule,
     MatSnackBarModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

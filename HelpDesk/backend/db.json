@@ -18,12 +18,10 @@
   "tecnicos": [
     {
       "nome": "Renan Pinho",
-      "cpf": "111.111.111-11",
+      "cpf": "111.111.111-12",
       "email": "renan@email.com.br",
       "senha": "123456",
-      "perfis": [
-        0
-      ],
+      "perfis": [],
       "dataCriacao": "",
       "id": 1
     }

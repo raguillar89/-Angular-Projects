@@ -1,5 +1,5 @@
 export interface Cadastro {
-    id?: number;
+    id?: any;
     nome: string;
     telefone: string;
     email: string;
