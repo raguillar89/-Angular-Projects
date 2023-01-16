@@ -25,7 +25,7 @@ export class TecnicoService {
 
   showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, 'X', {
-      duration: 2000,
+      duration: 4000,
       horizontalPosition: 'right',
       verticalPosition: 'top',
       panelClass: isError ? ['msg-error'] : ['msg-success'],
@@ -51,5 +51,9 @@ export class TecnicoService {
 
   update(tecnico: Tecnico): Observable<Tecnico> {
     return this.http.put<Tecnico>(`${API_CONFIG.baseUrl}/tecnicos/${tecnico.id}`, tecnico);
+  }
+
+  delete(id: any): Observable<Tecnico> {
+    return this.http.delete<Tecnico>(`${API_CONFIG.baseUrl}/tecnicos/${id}`);
   }
 }

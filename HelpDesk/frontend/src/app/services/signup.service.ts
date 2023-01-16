@@ -42,7 +42,7 @@ export class SignupService {
 
   showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, 'X', {
-      duration: 2000,
+      duration: 4000,
       horizontalPosition: 'right',
       verticalPosition: 'top',
       panelClass: isError ? ['msg-error'] : ['msg-success'],

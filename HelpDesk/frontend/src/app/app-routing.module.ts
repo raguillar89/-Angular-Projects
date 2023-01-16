@@ -4,6 +4,7 @@ import { AuthGuard } from './auth/auth.guard';
 
 import { HomeComponent } from './components/home/home.component';
 import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
+import { TecnicoDeleteComponent } from './components/tecnico/tecnico-delete/tecnico-delete.component';
 import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
 import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
 import { NavComponent } from './components/templates/nav/nav.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
       { path: 'tecnicos', component: TecnicoListComponent, canActivate: [AuthGuard] },
       { path: 'tecnicos/create', component: TecnicoCreateComponent, canActivate: [AuthGuard] },
       { path: 'tecnicos/update/:id', component: TecnicoUpdateComponent, canActivate: [AuthGuard] },
+      { path: 'tecnicos/delete/:id', component: TecnicoDeleteComponent, canActivate: [AuthGuard] },
     ]
   },  
 ];

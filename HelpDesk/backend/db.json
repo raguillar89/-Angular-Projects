@@ -24,6 +24,15 @@
       "perfis": [],
       "dataCriacao": "",
       "id": 1
+    },
+    {
+      "nome": "Joao Gomes",
+      "cpf": "123.456.789-00",
+      "email": "joao@email.com.br",
+      "senha": "123321",
+      "perfis": [],
+      "dataCriacao": "",
+      "id": 2
     }
   ]
 }

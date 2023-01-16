@@ -29,6 +29,7 @@ import { SignupComponent } from './views/signup/signup.component';
 import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
 import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
 import { RouterModule } from '@angular/router';
+import { TecnicoDeleteComponent } from './components/tecnico/tecnico-delete/tecnico-delete.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { RouterModule } from '@angular/router';
     LoginComponent,
     SignupComponent,
     TecnicoCreateComponent,
-    TecnicoUpdateComponent
+    TecnicoUpdateComponent,
+    TecnicoDeleteComponent,
   ],
   imports: [
     BrowserModule,
