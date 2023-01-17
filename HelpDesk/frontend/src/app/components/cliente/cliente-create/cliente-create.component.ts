@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Tecnico } from 'src/app/models/tecnico';
-import { TecnicoService } from 'src/app/services/tecnico.service';
+import { Cliente } from 'src/app/models/cliente';
+import { ClienteService } from 'src/app/services/cliente.service';
 
 @Component({
-  selector: 'app-tecnico-create',
-  templateUrl: './tecnico-create.component.html',
-  styleUrls: ['./tecnico-create.component.scss']
+  selector: 'app-cliente-create',
+  templateUrl: './cliente-create.component.html',
+  styleUrls: ['./cliente-create.component.scss']
 })
-export class TecnicoCreateComponent implements OnInit {
+export class ClienteCreateComponent implements OnInit {
 
-  tecnico: Tecnico = {
+  cliente: Cliente = {
     nome: '',
     cpf: '',
     email: '',
@@ -25,7 +25,7 @@ export class TecnicoCreateComponent implements OnInit {
   email: FormControl = new FormControl(null, Validators.email);
   senha: FormControl = new FormControl(null, Validators.minLength(5));
 
-  constructor(private tecnicoService: TecnicoService, private router: Router) {}
+  constructor(private clienteService: ClienteService, private router: Router) {}
 
   ngOnInit(): void { }
 
@@ -34,17 +34,17 @@ export class TecnicoCreateComponent implements OnInit {
   }
 
   create(): void {
-    this.tecnicoService.create(this.tecnico).subscribe(() => {
-      this.tecnicoService.showMessage('Técnico Cadastrado com Sucesso!', true);
-      this.router.navigate(['*/tecnicos']);
+    this.clienteService.create(this.cliente).subscribe(() => {
+      this.clienteService.showMessage('Cliente Cadastrado com Sucesso!', true);
+      this.router.navigate(['*/clientes']);
     })
   }
 
   addPerfil(perfil: any): void {
-    if(this.tecnico.perfis.includes(perfil)) {
-      this.tecnico.perfis.splice(this.tecnico.perfis.indexOf(perfil), 1);
+    if(this.cliente.perfis.includes(perfil)) {
+      this.cliente.perfis.splice(this.cliente.perfis.indexOf(perfil), 1);
     } else {
-      this.tecnico.perfis.push(perfil);
+      this.cliente.perfis.push(perfil);
     }
   }
 }

@@ -34,5 +34,19 @@
       "dataCriacao": "",
       "id": 2
     }
+  ],
+  "clientes": [
+    {
+      "nome": "Priscila Pinho",
+      "cpf": "987.654.321-00",
+      "email": "priscila@email.com.br",
+      "senha": "753159",
+      "perfis": [
+        0,
+        2
+      ],
+      "dataCriacao": "",
+      "id": 1
+    }
   ]
 }

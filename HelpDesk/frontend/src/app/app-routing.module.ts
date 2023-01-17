@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
+import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
+import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
+import { ClienteListComponent } from './components/cliente/cliente-list/cliente-list.component';
+import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
 
 import { HomeComponent } from './components/home/home.component';
 import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
@@ -30,6 +34,10 @@ const routes: Routes = [
       { path: 'tecnicos/create', component: TecnicoCreateComponent, canActivate: [AuthGuard] },
       { path: 'tecnicos/update/:id', component: TecnicoUpdateComponent, canActivate: [AuthGuard] },
       { path: 'tecnicos/delete/:id', component: TecnicoDeleteComponent, canActivate: [AuthGuard] },
+      { path: 'clientes', component: ClienteListComponent, canActivate: [AuthGuard] },
+      { path: 'clientes/create', component: ClienteCreateComponent, canActivate: [AuthGuard] },
+      { path: 'clientes/update/:id', component: ClienteUpdateComponent, canActivate: [AuthGuard] },
+      { path: 'clientes/delete/:id', component: ClienteDeleteComponent, canActivate: [AuthGuard] },
     ]
   },  
 ];

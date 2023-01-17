@@ -3,16 +3,16 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { EMPTY, Observable } from 'rxjs';
 import { API_CONFIG } from '../components/config/api.config';
-import { Tecnico } from '../models/tecnico';
+import { Cliente } from '../models/cliente';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TecnicoService {
+export class ClienteService {
 
-  tecnicos: Tecnico[];
+  clientes: Cliente[];
 
-  tecnico: Tecnico = {
+  cliente: Cliente = {
       nome: '',
       cpf: '',
       email: '',
@@ -37,23 +37,23 @@ export class TecnicoService {
     return EMPTY;
   }
 
-  findById(id: any): Observable<Tecnico> {
-    return this.http.get<Tecnico>(`${API_CONFIG.baseUrl}/tecnicos/${id}`);
+  findById(id: any): Observable<Cliente> {
+    return this.http.get<Cliente>(`${API_CONFIG.baseUrl}/clientes/${id}`);
   }
 
-  findAll(): Observable<Tecnico[]> {
-    return this.http.get<Tecnico[]>(`${API_CONFIG.baseUrl}/tecnicos`);
+  findAll(): Observable<Cliente[]> {
+    return this.http.get<Cliente[]>(`${API_CONFIG.baseUrl}/clientes`);
   }
 
-  create(tecnico: Tecnico): Observable<Tecnico> {
-    return this.http.post<Tecnico>(`${API_CONFIG.baseUrl}/tecnicos`, tecnico);
+  create(cliente: Cliente): Observable<Cliente> {
+    return this.http.post<Cliente>(`${API_CONFIG.baseUrl}/clientes`, cliente);
   }
 
-  update(tecnico: Tecnico): Observable<Tecnico> {
-    return this.http.put<Tecnico>(`${API_CONFIG.baseUrl}/tecnicos/${tecnico.id}`, tecnico);
+  update(cliente: Cliente): Observable<Cliente> {
+    return this.http.put<Cliente>(`${API_CONFIG.baseUrl}/clientes/${cliente.id}`, cliente);
   }
 
-  delete(id: any): Observable<Tecnico> {
-    return this.http.delete<Tecnico>(`${API_CONFIG.baseUrl}/tecnicos/${id}`);
+  delete(id: any): Observable<Cliente> {
+    return this.http.delete<Cliente>(`${API_CONFIG.baseUrl}/clientes/${id}`);
   }
 }
