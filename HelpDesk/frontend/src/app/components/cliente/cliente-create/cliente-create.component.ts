@@ -34,6 +34,7 @@ export class ClienteCreateComponent implements OnInit {
   }
 
   create(): void {
+    this.cliente.dataCriacao = new Date(Date.now()).toLocaleDateString('dd/mm/yyyy');
     this.clienteService.create(this.cliente).subscribe(() => {
       this.clienteService.showMessage('Cliente Cadastrado com Sucesso!', true);
       this.router.navigate(['*/clientes']);

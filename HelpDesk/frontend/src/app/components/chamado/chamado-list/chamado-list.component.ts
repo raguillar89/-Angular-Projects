@@ -14,14 +14,16 @@ export class ChamadoListComponent {
   ELEMENT_DATA: Chamado[] = [];
   FILTERED_DATA: Chamado[] = [];
 
-  displayedColumns: string[] = ['id', 'titulo', 'tecnico', 'dataAbertura', 'prioridade', 'status', 'acoes'];
+  displayedColumns: string[] = ['id', 'titulo', 'tecnico', 'cliente','dataAbertura', 'prioridade', 'status', 'acoes'];
   dataSource = new MatTableDataSource<Chamado>(this.ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private chamadoService: ChamadoService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.findAll();
+  }
 
   findAll(): void {
     this.chamadoService.findAll().subscribe(resposta => {

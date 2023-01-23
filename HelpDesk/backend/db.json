@@ -50,6 +50,15 @@
     }
   ],
   "chamados": [
-    
+    {
+      "prioridade": "1",
+      "status": "0",
+      "titulo": "Chamado 1",
+      "descricao": "Teste de Criação de Chamado.",
+      "tecnico": "Renan Pinho",
+      "cliente": "Priscila Pinho",
+      "dataAbertura": "1/23/2023",
+      "id": 1
+    }
   ]
 }
