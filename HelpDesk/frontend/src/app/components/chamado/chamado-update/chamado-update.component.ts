@@ -91,5 +91,4 @@ export class ChamadoUpdateComponent implements OnInit {
       this.router.navigate(['*/chamados']);
     })
   }
-
 }
