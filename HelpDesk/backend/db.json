@@ -51,8 +51,8 @@
   ],
   "chamados": [
     {
-      "prioridade": "1",
-      "status": "0",
+      "prioridade": "2",
+      "status": "1",
       "titulo": "Chamado 1",
       "descricao": "Teste de Criação de Chamado.",
       "tecnico": "Renan Pinho",

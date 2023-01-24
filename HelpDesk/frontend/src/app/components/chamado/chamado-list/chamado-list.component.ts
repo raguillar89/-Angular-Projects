@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Chamado } from 'src/app/models/chamado';
@@ -9,7 +9,7 @@ import { ChamadoService } from 'src/app/services/chamado.service';
   templateUrl: './chamado-list.component.html',
   styleUrls: ['./chamado-list.component.scss']
 })
-export class ChamadoListComponent {
+export class ChamadoListComponent implements OnInit {
   
   ELEMENT_DATA: Chamado[] = [];
   FILTERED_DATA: Chamado[] = [];
@@ -48,7 +48,7 @@ export class ChamadoListComponent {
     }
   }
 
-  retornaPrioridade(prioridade: any): string {
+  retornaPropriedade(prioridade: any): string {
     if(prioridade == '0') {
       return 'Baixa';
     } else if (prioridade == '1'){

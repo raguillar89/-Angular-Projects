@@ -11,7 +11,7 @@ export class NavComponent {
   constructor(private router: Router, private signupService: SignupService){ }
 
   ngOnInit(): void {
-    this.router.navigate(['chamados/create'])
+    this.router.navigate(['chamados/update/1'])
   }
 
   logout() {    

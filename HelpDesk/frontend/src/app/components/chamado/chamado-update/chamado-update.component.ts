@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Chamado } from 'src/app/models/chamado';
 import { Cliente } from 'src/app/models/cliente';
 import { Tecnico } from 'src/app/models/tecnico';
@@ -9,11 +9,11 @@ import { ClienteService } from 'src/app/services/cliente.service';
 import { TecnicoService } from 'src/app/services/tecnico.service';
 
 @Component({
-  selector: 'app-chamado-create',
-  templateUrl: './chamado-create.component.html',
-  styleUrls: ['./chamado-create.component.scss']
+  selector: 'app-chamado-update',
+  templateUrl: './chamado-update.component.html',
+  styleUrls: ['./chamado-update.component.scss']
 })
-export class ChamadoCreateComponent implements OnInit {
+export class ChamadoUpdateComponent implements OnInit {
 
   chamado: Chamado = {
     prioridade: '',
@@ -34,15 +34,43 @@ export class ChamadoCreateComponent implements OnInit {
   tecnico: FormControl = new FormControl(null, [Validators.required]);
   cliente: FormControl = new FormControl(null, [Validators.required]);
 
-  constructor(private router: Router, private clienteService: ClienteService, private tecnicoService: TecnicoService, private chamadoService: ChamadoService) {}
+  constructor(private router: Router, private clienteService: ClienteService, private tecnicoService: TecnicoService, private chamadoService: ChamadoService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.chamado.id = this.route.snapshot.paramMap.get('id');
+    this.findById();
     this.findAllClientes();
     this.findAllTecnicos();
   }
 
   validaCampos(): boolean {
     return this.prioridade.valid && this.status.valid && this.titulo.valid && this.descricao.valid && this.tecnico.valid && this.cliente.valid;
+  }
+  
+  retornaStatus(status: any): string {
+    if(status == '0') {
+      return 'Aberto';
+    } else if (status == '1'){
+      return 'Em Andamento';
+    } else {
+      return 'Encerrado';
+    }
+  }
+
+  retornaPropridade(prioridade: any): string {
+    if(prioridade == '0') {
+      return 'Baixa';
+    } else if (prioridade == '1'){
+      return 'Média';
+    } else {
+      return 'Alta';
+    }
+  }
+
+  findById(): void {
+    this.chamadoService.findById(this.chamado.id).subscribe(resposta => {
+      this.chamado = resposta;
+    });
   }
 
   findAllClientes(): void{
@@ -57,11 +85,11 @@ export class ChamadoCreateComponent implements OnInit {
     });
   }
 
-  create(): void {
-    this.chamado.dataAbertura = new Date(Date.now()).toLocaleDateString();
-    this.chamadoService.create(this.chamado).subscribe(() => {
-      this.chamadoService.showMessage('Chamado Criado com Sucessso!', true);
+  update(): void {
+    this.chamadoService.update(this.chamado).subscribe(() => {
+      this.chamadoService.showMessage('Chamado Atualizado com Sucessso!', true);
       this.router.navigate(['*/chamados']);
     })
   }
+
 }
